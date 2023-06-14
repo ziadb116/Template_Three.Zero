@@ -1,0 +1,88 @@
+@use "./varibles" as *;
+
+.services-sec {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  background-color: $section-background;
+  position: relative;
+
+  .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+.services-sec .services-content .service-box {
+  background-color: $white-color;
+  counter-increment: services-counter;
+  text-align: center;
+  position: relative;
+  transition: $main-transition;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 4px;
+    background-color: $main-style-color;
+    transition: $main-transition;
+    transform-origin: center;
+  }
+  &:hover {
+    & {
+      transform: translateY(-10px);
+    }
+    &::before {
+      width: 100%;
+    }
+  }
+}
+.services-sec .services-content .service-box i {
+  color: $secondary-text-color;
+  display: block;
+  margin: 30px auto 20px;
+}
+.services-sec .services-content .service-box h3 {
+  color: $main-style-color;
+  margin: 20px 0 40px;
+  font-size: 30px;
+}
+.services-sec .services-content .service-box .box-details {
+  text-align: right;
+  padding: 15px;
+  position: relative;
+  &::before {
+    content: "0" counter(services-counter);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 15px;
+    background-color: $main-style-color;
+    color: $white-color;
+    font-size: 30px;
+    font-weight: bold;
+    transform-origin: right;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 60px;
+    height: calc(100% + 1px);
+    background-color: $section-background;
+    transform: skew(-30deg);
+  }
+}
+
+.services-sec .services-content .service-box .box-details a {
+  color: $main-style-color;
+}

@@ -1,0 +1,70 @@
+@use "./varibles" as *;
+
+.discount-sec {
+  padding-bottom: $main-padding-bottom;
+}
+
+.discount-sec .discount-text {
+  background-image: url(../Media/discount-background1.jpg);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+
+  &::before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(23 135 224 / 97%);
+  }
+
+  h1 {
+    margin: 0;
+    padding: 20px 0 0;
+    color: $white-color;
+    font-size: 40px;
+  }
+
+  p {
+    line-height: 1.6;
+    color: $white-color;
+    width: 400px;
+    letter-spacing: 1px;
+    margin: 20px auto;
+    font-size: 18px;
+  }
+
+  img {
+    max-width: 100%;
+    width: 200px;
+  }
+}
+
+.discount-sec .container {
+  text-align: center;
+
+  h1 {
+    font-size: 45px;
+  }
+
+  input {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    padding: 15px 30px 15px 10px;
+    background-color: $section-background;
+    border: none;
+    border-bottom: 1px solid $secondary-text-color;
+    outline: none;
+    caret-color: $main-style-color;
+
+    &[type="submit"] {
+      background-color: $main-style-color;
+      color: $white-color;
+      font-weight: bold;
+    }
+  }
+}

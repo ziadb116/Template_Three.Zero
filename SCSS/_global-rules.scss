@@ -1,0 +1,80 @@
+@use "./varibles" as *;
+/* start global rules */
+html {
+  -webkit-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+body {
+  font-family: $main-font-family;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+/* end global rules */
+
+/* start main container */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+// small-screen-media
+@media ($small-screen-media) {
+  .container {
+    width: 750px;
+  }
+}
+// medium-screen-media
+@media ($medium-screen-media) {
+  .container {
+    width: 970px;
+  }
+}
+// large-screen-media
+@media ($large-screen-media) {
+  .container {
+    width: 1170px;
+  }
+}
+/* end main container */
+// start animation
+// == up-and-down
+@keyframes up-and-down {
+  0%,
+  100% {
+    bottom: 30px;
+  }
+  50% {
+    bottom: 0;
+  }
+}
+// == up-and-down
+
+// == left-and-right
+@keyframes left-and-right {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(10px);
+  }
+}
+// == left-and-right
+
+// end animation

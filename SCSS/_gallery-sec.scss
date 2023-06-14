@@ -1,0 +1,28 @@
+@use "./varibles" as *;
+
+.gallery-sec {
+  background-color: $section-background;
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  position: relative;
+}
+.gallery-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.gallery-content .gallery-box {
+  border: solid 15px $white-color;
+  box-shadow: 0 0 10px #ccc;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-content .gallery-box img {
+  max-width: 100%;
+  transition: $main-transition;
+  &:hover {
+    transform: rotate(10deg) scale(1.2);
+  }
+}

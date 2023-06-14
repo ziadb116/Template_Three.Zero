@@ -1,0 +1,53 @@
+@use "./varibles" as *;
+
+.testmonials-sec {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  background-color: $section-background;
+}
+
+.testmonials-sec .test-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.testmonials-sec .test-content .test-box {
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: $white-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.testmonials-sec .test-content .test-box img {
+  width: 100px;
+  border-radius: 50%;
+  background-color: $section-background;
+  border: 10px solid $section-background;
+  position: absolute;
+  top: -50px;
+  right: -10px;
+}
+
+.testmonials-sec .test-content .test-box h3 {
+  margin-bottom: 10px;
+  color: $main-style-color;
+}
+
+.testmonials-sec .test-content .test-box .job-title {
+  display: block;
+  margin-bottom: 10px;
+  color: $secondary-text-color;
+}
+
+.testmonials-sec .test-content .test-box .rate {
+  margin-bottom: 10px;
+  .filled {
+    color: #ffc107;
+  }
+}
+
+.testmonials-sec .test-content .test-box p {
+  color: $secondary-text-color;
+  line-height: 1.5;
+}

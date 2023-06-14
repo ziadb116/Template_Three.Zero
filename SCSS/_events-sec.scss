@@ -1,0 +1,136 @@
+@use "./varibles" as *;
+
+.events-sec {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  text-align: center;
+}
+
+.events-sec .events-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.events-sec .events-content .event-img {
+  img {
+    width: 100%;
+  }
+  @media (max-width: 991px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.events-sec .events-content .event-main-box {
+  flex: 1;
+  text-align: center;
+}
+
+.events-content .event-main-box {
+  .event-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+}
+.events-content .event-main-box .event-timer {
+  .timer-box {
+    border: 1px solid $secondary-text-color;
+    border-radius: 5px;
+    width: 75px;
+    &:hover,
+    &:hover span:last-child {
+      border-color: $main-hover-color;
+    }
+
+    span {
+      display: block;
+      padding: 10px;
+      &:first-child {
+        font-size: 35px;
+        font-weight: bold;
+        color: $main-style-color;
+      }
+      &:last-child {
+        border-top: 1px solid;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.events-content .event-main-box .text-box {
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 30px;
+  }
+
+  p {
+    margin: 10px 0 0 0;
+    color: $secondary-text-color;
+    line-height: 1.6;
+    font-size: 18px;
+  }
+}
+
+.events-sec .event-subscribe {
+  form {
+    width: 600px;
+    margin: 0 auto;
+    background-color: $section-background;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    @media (max-width: 767px) {
+      & {
+        border-radius: 10px;
+        flex-direction: column;
+        max-width: 100%;
+      }
+    }
+
+    input[type="email"] {
+      flex: 1;
+      border: none;
+      border-radius: 50px;
+      padding: 20px 30px;
+      caret-color: $main-style-color;
+      &::placeholder {
+        color: $main-style-color;
+      }
+      &:focus {
+        outline: 1px solid $main-hover-color;
+      }
+
+      @media (max-width: 767px) {
+        & {
+          padding: 10px;
+        }
+      }
+    }
+
+    input[type="submit"] {
+      background-color: $main-style-color;
+      color: $white-color;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      padding: 20px;
+      cursor: pointer;
+      &:hover {
+        background-color: $main-hover-color;
+      }
+      @media (max-width: 767px) {
+        & {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,105 @@
+@use "./varibles" as *;
+
+.team-members-sec {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  position: relative;
+
+  .team-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+  }
+}
+
+.team-content .team-box {
+  position: relative;
+  overflow: hidden;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 60px);
+    height: 100%;
+    background-color: $section-background;
+    z-index: -2;
+    border-radius: 10px;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -60px;
+    width: calc(100% - 60px);
+    height: 100%;
+    background-color: #f7f7f7;
+    z-index: -1;
+    border-radius: 10px;
+    transition: $main-transition;
+    opacity: 0;
+  }
+  &:hover::after {
+    opacity: 1;
+    left: 60px;
+  }
+}
+
+.team-content .team-box .box-data {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 50px;
+}
+
+.team-content .team-box .box-data img {
+  width: calc(100% - 60px);
+  border-radius: 10px;
+  filter: grayscale(100%);
+  transition: $main-transition;
+}
+.team-content .team-box:hover {
+  & .box-data img {
+    filter: grayscale(0);
+  }
+}
+
+.team-content .team-box .box-data .box-links {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: grayscale(100%);
+    color: $main-style-color;
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.team-content .team-box .box-info {
+  padding-left: 80px;
+  filter: grayscale(100%);
+  transition: $main-transition;
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 0;
+    color: $main-style-color;
+  }
+  p {
+    color: $secondary-text-color;
+    margin-top: 10px;
+    margin-bottom: 25px;
+  }
+}
+
+.team-content .team-box:hover {
+  & .box-info {
+    filter: grayscale(0);
+  }
+}

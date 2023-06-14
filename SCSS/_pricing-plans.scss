@@ -1,0 +1,180 @@
+@use "./varibles" as *;
+
+.pricing-plans {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  position: relative;
+  background-color: $section-background;
+
+  .plans-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    @media ($mobile-screen-media) {
+      & {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        .plan-box:hover {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+}
+
+.pricing-plans .plan-box {
+  background-color: $section-background;
+  box-shadow: 0 0 10px #ccc;
+  transition: $main-transition;
+  z-index: 1;
+  &:hover {
+    & {
+      transform: translateY(-20px);
+    }
+
+    .box-head::before,
+    .box-body::before,
+    .box-foot::before {
+      width: 100%;
+    }
+    &:nth-of-type(2) .label::after {
+      border-color: transparent transparent $white-color transparent;
+    }
+  }
+
+  &:nth-of-type(2) {
+    position: relative;
+
+    .label {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      background-color: $main-style-color;
+      color: $white-color;
+      writing-mode: vertical-rl;
+      padding: 10px 10px 35px 10px;
+      width: 40px;
+      height: 150px;
+      font-weight: bold;
+      font-size: 18px;
+      &::after {
+        content: "";
+        position: absolute;
+        border: 20px solid;
+        top: 110px;
+        right: 0;
+        transition: $main-transition;
+        border-color: transparent transparent $section-background transparent;
+      }
+    }
+  }
+}
+
+.pricing-plans .box-head {
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $white-color;
+    transition: $main-transition;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  img {
+    display: block;
+    margin: 20px auto;
+    width: 100px;
+  }
+
+  span {
+    display: block;
+
+    &:first-of-type {
+      font-weight: bold;
+      font-size: 50px;
+      color: $main-style-color;
+    }
+
+    &:last-of-type {
+      color: $secondary-text-color;
+    }
+  }
+}
+
+.pricing-plans .box-body {
+  position: relative;
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: $white-color;
+    transition: $main-transition;
+  }
+  li {
+    border-top: 1px solid $secondary-text-color;
+    color: $secondary-text-color;
+    padding: 20px;
+    position: relative;
+
+    &::before {
+      content: "\f0e7";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 5px;
+      color: $main-style-color;
+      margin-right: 10px;
+    }
+  }
+}
+
+.pricing-plans .box-foot {
+  padding: 30px;
+  position: relative;
+  position: relative;
+
+  &::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $white-color;
+    transition: $main-transition;
+  }
+
+  a {
+    margin: 0 auto;
+    width: fit-content;
+    display: block;
+    color: $main-style-color;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid $main-style-color;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: $main-transition;
+    &:hover {
+      background-color: $main-hover-color;
+      color: $white-color;
+    }
+  }
+}

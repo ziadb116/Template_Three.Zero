@@ -1,0 +1,62 @@
+@use "./varibles" as *;
+/* -=====< component >=====- */
+.special-heading {
+  text-align: center;
+  margin-bottom: 50px;
+
+  > h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bold;
+    margin: calc($main-padding-top - 30px) auto;
+    border: solid;
+    padding: 10px 30px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    position: relative;
+    transition: $main-transition;
+
+    &:hover {
+      transition: $main-transition;
+      background-color: $main-style-color;
+      color: $white-color;
+      cursor: pointer;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      left: -50px;
+      height: 14px;
+      border-radius: 50%;
+      transition: $main-transition;
+      background-color: $main-style-color;
+    }
+    &:hover::before {
+      left: 50%;
+      width: 0;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -50px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: $main-style-color;
+      transition: $main-transition;
+    }
+    &:hover::after {
+      right: 50%;
+      width: 0;
+    }
+  }
+}

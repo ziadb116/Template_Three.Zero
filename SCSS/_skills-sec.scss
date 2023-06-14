@@ -1,0 +1,51 @@
+@use "./varibles" as *;
+
+.skills-sec {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+
+  .skills-content {
+    display: flex;
+    align-items: center;
+    .skills-pic img {
+      width: 100%;
+    }
+    .main-skill-boxs {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  .skills-sec .skills-content .skills-pic {
+    display: none;
+  }
+}
+
+.skills-sec .skill-box {
+  margin-bottom: 20px;
+  h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    span {
+      border: 1px solid $secondary-text-color;
+      border-radius: 5px;
+      color: $main-style-color;
+      font-size: 12px;
+      padding: 2.5px 5px;
+    }
+  }
+}
+
+.skills-sec .skills-content .skill-box .skill-level {
+  background-color: $section-background;
+  height: 30px;
+  position: relative;
+  span {
+    display: block;
+    height: 100%;
+    background-color: $main-style-color;
+  }
+}

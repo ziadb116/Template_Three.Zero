@@ -1,0 +1,74 @@
+@use "./varibles" as *;
+
+.top-video-sec {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  .video-content {
+    display: flex;
+
+    @media (max-width: 991px) {
+      flex-direction: column;
+    }
+  }
+}
+
+.top-video-sec .video-content {
+  .top {
+    border-top: 1px solid $secondary-text-color;
+    border-bottom: 1px solid $secondary-text-color;
+    border-left: 1px solid $secondary-text-color;
+    box-shadow: 0 0 5px #ccc;
+
+    h4 {
+      padding: 20px;
+      background-color: $section-background;
+      position: relative;
+
+      &::after {
+        content: "\f074";
+        font-family: $font-Awesome-family;
+        font-weight: $font-Awesome-weight;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 20px;
+      }
+    }
+
+    ul {
+      li {
+        padding: 20px;
+        a:hover {
+          cursor: pointer;
+          color: $main-hover-color;
+        }
+
+        &:not(:first-of-type) {
+          border-top: 1px solid $secondary-text-color;
+        }
+
+        span {
+          margin-top: 5px;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.top-video-sec .video-content {
+  .preview {
+    padding: 10px;
+    background-color: $section-background;
+    flex: 1;
+    img {
+      max-width: 100%;
+    }
+
+    p {
+      background-color: $white-color;
+      padding: 20px;
+      margin: 50px 0 0 0;
+    }
+  }
+}

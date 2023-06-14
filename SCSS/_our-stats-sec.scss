@@ -1,0 +1,87 @@
+@use "./varibles" as *;
+
+.our-stats-sec {
+  padding-top: $main-padding-top;
+  padding-bottom: $main-padding-bottom;
+  background-image: url(../Media/stats.jpg);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 / 95%);
+    z-index: -1;
+  }
+
+  .container {
+    h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.our-stats-sec .stat-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+
+  .stat-box {
+    background-color: $white-color;
+    padding: 20px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      height: 0;
+      width: 5px;
+      transition: $main-transition;
+      background-color: $main-style-color;
+    }
+
+    &::before {
+      top: 0;
+      left: 0;
+    }
+    &::after {
+      bottom: 0;
+      right: 0;
+    }
+
+    &:hover {
+      &::before,
+      &::after {
+        height: 100%;
+      }
+    }
+
+    i {
+      margin: 0 auto;
+      display: block;
+    }
+
+    span {
+      display: block;
+
+      &:first-of-type {
+        margin: 10px auto;
+        font-size: 50px;
+        font-weight: bold;
+      }
+      &:last-of-type {
+        font-weight: bold;
+        color: $main-style-color;
+        font-style: italic;
+        font-size: 18px;
+      }
+    }
+  }
+}
